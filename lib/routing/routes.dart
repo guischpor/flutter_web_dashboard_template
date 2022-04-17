@@ -3,7 +3,7 @@ const driversPageRoute = 'Drivers';
 const clientsPageRoute = 'Clients';
 const authenticationPageRoute = 'Authentication';
 
-List sideMenuItems = [
+List<String> sideMenuItems = [
   overViewPageRoute,
   driversPageRoute,
   clientsPageRoute,

@@ -14,7 +14,7 @@ class SiteLayout extends StatelessWidget {
     return Scaffold(
       key: _scaffoldKey,
       appBar: topNavigationBar(context, _scaffoldKey),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       drawerEnableOpenDragGesture: true,
       body: const ResponsiveWidget(
         largeScreen: LargeScreen(),
