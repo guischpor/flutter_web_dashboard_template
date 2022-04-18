@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard_template/controllers/menu_controller.dart';
-import 'package:flutter_web_dashboard_template/routing/routes.dart';
+import 'package:flutter_web_dashboard_template/routes/routes.dart';
 import 'package:flutter_web_dashboard_template/site_layout.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  Get.lazyPut(() => MenuController());
+  // Get.put(MenuController(), permanent: true);
+  Get.lazyPut(() => MenuController(), fenix: true);
   runApp(const MyApp());
 }
 
@@ -32,12 +33,12 @@ class MyApp extends StatelessWidget {
         primaryColor: Colors.blue,
       ),
       home: SiteLayout(),
-      initialRoute: authenticationPageRoute,
-      unknownRoute: GetPage(
-        name: '/not-found',
-        page: () => Container(),
-        transition: Transition.fadeIn,
-      ),
+      // initialRoute: authenticationPageRoute,
+      // unknownRoute: GetPage(
+      //   name: '/not-found',
+      //   page: () => Container(),
+      //   transition: Transition.fadeIn,
+      // ),
     );
   }
 }

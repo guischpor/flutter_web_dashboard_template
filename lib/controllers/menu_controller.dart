@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard_template/constants/web_colors.dart';
-import 'package:flutter_web_dashboard_template/routing/routes.dart';
+import 'package:flutter_web_dashboard_template/routes/routes.dart';
 import 'package:get/get.dart';
 
 class MenuController extends GetxController {
-  final MenuController instance = Get.find();
+  MenuController instance = Get.find();
 
   var activeItem = overViewPageRoute.obs;
   var hoverItem = "".obs;

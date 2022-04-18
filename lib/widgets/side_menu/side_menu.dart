@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_web_dashboard_template/constants/controllers.dart';
 import 'package:flutter_web_dashboard_template/constants/web_colors.dart';
 import 'package:flutter_web_dashboard_template/helpers/responsive_widget.dart';
-import 'package:flutter_web_dashboard_template/routing/routes.dart';
+import 'package:flutter_web_dashboard_template/routes/routes.dart';
 import 'package:flutter_web_dashboard_template/widgets/custom_text.dart';
 import 'package:flutter_web_dashboard_template/widgets/side_menu/side_menu_item.dart';
 import 'package:get/get.dart';
