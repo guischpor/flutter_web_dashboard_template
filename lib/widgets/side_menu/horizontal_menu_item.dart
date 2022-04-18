@@ -22,52 +22,52 @@ class HorizontalMenuItem extends StatelessWidget {
       onHover: (value) {
         value
             ? menuController.onHover(itemName)
-            : menuController.onHover('not hovering');
+            : menuController.onHover("not hovering");
       },
       child: Obx(
-        (() => Container(
-              color: menuController.isHovering(itemName)
-                  ? lightGrey.withOpacity(.1)
-                  : Colors.transparent,
-              child: Row(
-                children: [
-                  Visibility(
-                    visible: menuController.isHovering(itemName) ||
-                        menuController.isHovering(itemName),
-                    child: Container(
-                      width: 6,
-                      height: 40,
-                      color: dark,
-                    ),
-                    maintainSize: true,
-                    maintainState: true,
-                    maintainAnimation: true,
-                  ),
-                  SizedBox(width: _widht / 80),
-                  Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: menuController.returnIconFor(itemName),
-                  ),
-                  if (!menuController.isActive(itemName))
-                    Flexible(
-                        child: CustomText(
-                      text: itemName,
-                      color: menuController.isHovering(itemName)
-                          ? dark
-                          : lightGrey,
-                    ))
-                  else
-                    Flexible(
-                      child: CustomText(
-                        text: itemName,
-                        color: dark,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                ],
+        () => Container(
+          color: menuController.isHovering(itemName)
+              ? lightGrey.withOpacity(.1)
+              : Colors.transparent,
+          child: Row(
+            children: [
+              Visibility(
+                visible: menuController.isHovering(itemName) ||
+                    menuController.isActive(itemName),
+                maintainSize: true,
+                maintainAnimation: true,
+                maintainState: true,
+                child: Container(
+                  width: 6,
+                  height: 40,
+                  color: dark,
+                ),
               ),
-            )),
+              SizedBox(width: _widht / 88),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: menuController.returnIconFor(itemName),
+              ),
+              if (!menuController.isActive(itemName))
+                Flexible(
+                  child: CustomText(
+                    text: itemName,
+                    color:
+                        menuController.isHovering(itemName) ? dark : lightGrey,
+                  ),
+                )
+              else
+                Flexible(
+                  child: CustomText(
+                    text: itemName,
+                    color: dark,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                )
+            ],
+          ),
+        ),
       ),
     );
   }

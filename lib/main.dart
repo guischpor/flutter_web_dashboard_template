@@ -7,7 +7,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   // Get.put(MenuController(), permanent: true);
-  Get.lazyPut(() => MenuController(), fenix: true);
+  Get.lazyPut(() => MenuController());
   runApp(const MyApp());
 }
 

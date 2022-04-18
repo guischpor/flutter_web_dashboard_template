@@ -12,7 +12,8 @@ class SideMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double _widht = MediaQuery.of(context).size.width;
+    double _width = MediaQuery.of(context).size.width;
+
     return Container(
       color: light,
       child: ListView(
@@ -21,55 +22,88 @@ class SideMenu extends StatelessWidget {
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 40),
+                const SizedBox(
+                  height: 40,
+                ),
                 Row(
                   children: [
-                    SizedBox(width: _widht / 48),
+                    SizedBox(width: _width / 48),
                     Padding(
                       padding: const EdgeInsets.only(right: 12),
-                      child: Image.asset('assets/images/logo.png'),
+                      child: Image.asset("assets/images/logo.png"),
                     ),
                     Flexible(
                       child: CustomText(
-                        text: 'Dashboard',
+                        text: "Dash",
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: active,
                       ),
                     ),
-                    SizedBox(width: _widht / 48),
+                    SizedBox(width: _width / 48),
                   ],
-                )
+                ),
+                const SizedBox(
+                  height: 30,
+                ),
               ],
             ),
-          const SizedBox(height: 40),
-          Divider(color: lightGrey.withOpacity(.1)),
+          Divider(
+            color: lightGrey.withOpacity(.1),
+          ),
           Column(
-              mainAxisSize: MainAxisSize.min,
-              children: sideMenuItems
-                  .map(
-                    (itemName) => SideMenuItem(
-                      itemName: itemName == authenticationPageRoute
-                          ? "Log Out"
-                          : itemName,
-                      onTap: () {
-                        if (itemName == authenticationPageRoute) {
-                          // TODO: go to authentication page
-                        }
+            mainAxisSize: MainAxisSize.min,
+            children: sideMenuItems
+                .map(
+                  (itemName) => SideMenuItem(
+                    itemName: itemName == authenticationPageRoute
+                        ? "Log Out"
+                        : itemName,
+                    onTap: () {
+                      if (itemName == authenticationPageRoute) {
+                        // TODO: go to authentication page
+                      }
 
-                        if (!menuController.isActive(itemName)) {
-                          menuController.changeActiveItem(itemName);
-                          if (ResponsiveWidget.isSmallScreen(context)) {
-                            Get.back();
-                            // TODO: go to itemName route
-                          }
+                      if (!menuController.isActive(itemName)) {
+                        menuController.changeActiveItemTo(itemName);
+                        if (ResponsiveWidget.isSmallScreen(context)) {
+                          Get.back();
+                          // TODO: go to itemName route
                         }
-                      },
-                    ),
-                  )
-                  .toList())
+                      }
+                    },
+                  ),
+                )
+                .toList(),
+          )
         ],
       ),
     );
   }
 }
+
+// Divider(color: lightGrey.withOpacity(.1)),
+//           Column(
+//               mainAxisSize: MainAxisSize.min,
+//               children: sideMenuItems
+//                   .map(
+//                     (itemName) => SideMenuItem(
+//                       itemName: itemName == authenticationPageRoute
+//                           ? "Log Out"
+//                           : itemName,
+//                       onTap: () {
+//                         if (itemName == authenticationPageRoute) {
+//                           // TODO: go to authentication page
+//                         }
+
+//                         if (!menuController.isActive(itemName)) {
+//                           menuController.changeActiveItemTo(itemName);
+//                           if (ResponsiveWidget.isSmallScreen(context)) {
+//                             Get.back();
+//                             // TODO: go to itemName route
+//                           }
+//                         }
+//                       },
+//                     ),
+//                   )
+//                   .toList())
