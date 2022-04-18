@@ -81,29 +81,3 @@ class SideMenu extends StatelessWidget {
     );
   }
 }
-
-// Divider(color: lightGrey.withOpacity(.1)),
-//           Column(
-//               mainAxisSize: MainAxisSize.min,
-//               children: sideMenuItems
-//                   .map(
-//                     (itemName) => SideMenuItem(
-//                       itemName: itemName == authenticationPageRoute
-//                           ? "Log Out"
-//                           : itemName,
-//                       onTap: () {
-//                         if (itemName == authenticationPageRoute) {
-//                           // TODO: go to authentication page
-//                         }
-
-//                         if (!menuController.isActive(itemName)) {
-//                           menuController.changeActiveItemTo(itemName);
-//                           if (ResponsiveWidget.isSmallScreen(context)) {
-//                             Get.back();
-//                             // TODO: go to itemName route
-//                           }
-//                         }
-//                       },
-//                     ),
-//                   )
-//                   .toList())
