@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import '../../constants/controllers.dart';
 import '../../constants/web_colors.dart';
 import '../custom_text.dart';
@@ -32,7 +33,7 @@ class VerticalMenuItem extends StatelessWidget {
             children: [
               Visibility(
                 visible: menuController.isHovering(itemName) ||
-                    menuController.isHovering(itemName),
+                    menuController.isActive(itemName),
                 child: Container(
                   width: 3,
                   height: 72,

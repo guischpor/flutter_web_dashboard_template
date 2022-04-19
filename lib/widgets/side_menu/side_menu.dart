@@ -32,7 +32,7 @@ class SideMenu extends StatelessWidget {
                     ),
                     Flexible(
                       child: CustomText(
-                        text: "Dash",
+                        text: "Dashboard",
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: active,
@@ -46,9 +46,9 @@ class SideMenu extends StatelessWidget {
                 ),
               ],
             ),
-          Divider(
-            color: lightGrey.withOpacity(.1),
-          ),
+          // Divider(
+          //   color: lightGrey.withOpacity(.1),
+          // ),
           Column(
             mainAxisSize: MainAxisSize.min,
             children: sideMenuItems
@@ -64,10 +64,8 @@ class SideMenu extends StatelessWidget {
 
                       if (!menuController.isActive(itemName)) {
                         menuController.changeActiveItemTo(itemName);
-                        if (ResponsiveWidget.isSmallScreen(context)) {
-                          Get.back();
-                          // TODO: go to itemName route
-                        }
+                        if (ResponsiveWidget.isSmallScreen(context)) Get.back();
+                        navigationController.navigateTo(itemName);
                       }
                     },
                   ),
