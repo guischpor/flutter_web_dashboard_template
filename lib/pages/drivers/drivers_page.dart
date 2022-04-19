@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../constants/web_colors.dart';
+import '../../constants/controllers.dart';
+import '../../helpers/responsive_widget.dart';
 import '../../widgets/custom_text.dart';
 
 class DriversPage extends StatelessWidget {
@@ -8,12 +10,25 @@ class DriversPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: CustomText(
-        text: 'Drivers Page',
-        color: dark,
-        fontSize: 30,
-      ),
+    return Column(
+      children: [
+        Obx(
+          () => Row(
+            children: [
+              Container(
+                margin: EdgeInsets.only(
+                  top: ResponsiveWidget.isSmallScreen(context) ? 56 : 6,
+                ),
+                child: CustomText(
+                  text: menuController.activeItem.value,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
+          ),
+        )
+      ],
     );
   }
 }
