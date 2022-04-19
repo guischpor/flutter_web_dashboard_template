@@ -4,7 +4,7 @@ import 'package:flutter_web_dashboard_template/routes/routes.dart';
 import 'package:get/get.dart';
 
 class MenuController extends GetxController {
-  MenuController instance = Get.find();
+  static MenuController instance = Get.find();
 
   var activeItem = overViewPageRoute.obs;
   var hoverItem = "".obs;
