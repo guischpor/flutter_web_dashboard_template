@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../constants/controllers.dart';
 import '../../helpers/responsive_widget.dart';
 import '../../widgets/custom_text.dart';
+import 'widgets/drivers_table.dart';
 
 class DriversPage extends StatelessWidget {
   const DriversPage({Key? key}) : super(key: key);
@@ -24,9 +25,14 @@ class DriversPage extends StatelessWidget {
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
-              )
+              ),
             ],
           ),
+        ),
+        Expanded(
+          child: ListView(children: const [
+            DriversTable(),
+          ]),
         )
       ],
     );

@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import '../../constants/controllers.dart';
 import '../../helpers/responsive_widget.dart';
 import '../../widgets/custom_text.dart';
+import 'widgets/clients_table.dart';
 
 class ClientsPage extends StatelessWidget {
   const ClientsPage({Key? key}) : super(key: key);
@@ -27,6 +28,11 @@ class ClientsPage extends StatelessWidget {
               )
             ],
           ),
+        ),
+        Expanded(
+          child: ListView(children: const [
+            ClientsTable(),
+          ]),
         )
       ],
     );
